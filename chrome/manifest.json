@@ -7,7 +7,6 @@
 
   "browser_action": {
     "default_icon": "images/angry_cat.png",
-    // "default_popup": "blank.html",
     "default_title": "hack"
   },
 

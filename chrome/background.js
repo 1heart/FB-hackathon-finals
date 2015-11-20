@@ -18,5 +18,5 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
 
 // redirect when browser action is clicked
 chrome.browserAction.onClicked.addListener(function(tab) {
-	window.open("redirect.html");
+	window.open("register.html");
 });
