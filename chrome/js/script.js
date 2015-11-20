@@ -60,7 +60,7 @@ confirmation = function(fbSource, youtubeID){
 		crossDomain: true,
 		success: function(data){
 				console.log(data);
-				var celebrate = data.facebook == "success" || data.youtube == "failure";
+				var celebrate = data.facebook == "success" || data.youtube == "success";
 				// Change to different messages for success and failure
 				if(celebrate){
 					$("#message").html("<h2>Congratulations, your video was successfully posted and is now safe from pirates.</h2>");
