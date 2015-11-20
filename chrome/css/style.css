@@ -1,0 +1,68 @@
+.jumbotron {
+	margin-bottom: 0;
+	background-image: url("../images/ocean_2.jpg");
+	color: white;
+	font-family: Arimo;
+}
+
+#title {
+	text-align: center;
+	margin-top: 8%;
+	font-size: 7em;
+}
+
+#header {
+	text-align: center;
+	margin-top: 5%;
+	font-size: 3em;
+}
+
+#source-url {
+	width: 100%;
+	margin-right: 0;
+	padding-right: 0;
+}
+
+.input-row {
+	margin-top: 12%;
+
+}
+
+.input-wrapper {
+	padding-right: 0;
+}
+
+.button-wrapper {
+	padding-left: 0;
+	text-align: center;
+}
+
+#send {
+	width: 100%;
+	height: 50px;
+	margin-left: 0;
+	padding-left: 0;
+	background-color: rgba(0,0,150,.5);
+	font-size: 1.9em;
+}
+
+#source-url {
+	height: 50px;
+	background-color: rgba(0,0,0,.3);
+	font-size: 2em;
+}
+
+#myModal {
+	margin-top: 15%;
+}
+
+
+.message-wrapper {
+	text-align: center;
+	margin-top: 10px;
+}
+
+#loading {
+	height: 100px;
+	width: 100px;
+}
