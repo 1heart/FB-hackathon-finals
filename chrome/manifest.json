@@ -31,6 +31,11 @@
       "matches": ["https://www.youtube.com/*"],
       "css": ["css/style.css", "css/vex.css", "css/vex-theme-os.css"],
       "js": ["js/vex.combined.min.js", "js/youtube.js"]
+    },
+    {
+      "matches": ["https://www.facebook.com/*"],
+      "css": ["css/style.css", "css/vex.css", "css/vex-theme-os.css"],
+      "js": ["js/jquery.js","js/vex.combined.min.js", "js/facebook.js"]
     }
   ]
 }
