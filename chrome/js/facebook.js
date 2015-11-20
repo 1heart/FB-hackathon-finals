@@ -1,18 +1,21 @@
 vex.defaultOptions.className = 'vex-theme-os';
 
-var videos = [];
+var videos = Object();
 
 grabVideoUrl = function() {
 	var currVideos = document.getElementsByTagName("video");
 	for (var i=0; i<currVideos.length; i++) {
 		var video_src = currVideos[i].getAttribute('src');
-		if (videos.indexOf(video_src)==-1 && withinviewport(currVideos[i])) {
-			videos.push(video_src);
+		var video_id = currVideos[i].children[0].getAttribute('id');
+
+		console.log(video_id);
+		if (!videos.hasOwnProperty(video_id)) {
+			videos[video_id] = video_src;
 			callServer(video_src);
 		}
 	}
 }
-
+// && withinviewport(currVideos[i])
 callServer = function(url) {
 
 	// call server w/ url
