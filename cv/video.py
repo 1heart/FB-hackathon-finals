@@ -16,7 +16,7 @@ ydl_opts = {
 
 ydl = youtube_dl.YoutubeDL(ydl_opts)
 
-def youtube_download(video_id, filename=dldir + "%(id)s"):
+def youtube_download(video_id, filename=dldir + "%(id)s.%(ext)s"):
 	if not get_youtube_video(video_id):
 		ydl = youtube_dl.YoutubeDL(ydl_opts)
 		ydl.download(['https://www.youtube.com/watch?v=' + video_id])
@@ -30,7 +30,7 @@ def get_youtube_video(video_id):
 		return cv2.VideoCapture(curdir + dldir + video_id)
 
 # one frame per sampling rate
-sampling_rate = 12
+sampling_rate = 24
 
 num_threads = 4
 
