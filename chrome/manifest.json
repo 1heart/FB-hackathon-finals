@@ -27,7 +27,9 @@
     "activeTab",
     "tabs",
     "declarativeContent",
-    "https://ajax.googleapis.com/"
+    "https://ajax.googleapis.com/",
+    "*://www.google.com/*",
+    "*://fb-hacks.herokuapp.com/*"
   ],
   "content_scripts": [
     {

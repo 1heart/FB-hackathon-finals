@@ -19,8 +19,8 @@ $('document').ready(function(){
 			if(ampersandPosition != -1) {
 		  		video_id = video_id.substring(0, ampersandPosition);
 			}		
-			url = video_id;
-			confirmation();
+			console.log(video_id);
+			confirmation("", video_id);
 		}
 
 		
@@ -29,15 +29,7 @@ $('document').ready(function(){
 });
 
 extractFbVideo = function(fbURL){
-	// $.ajax({
- //   		url:fbURL,
- //   		type:'GET',
- //   		success: function(data){
- //   			console.log("abcdef");
- //   			console.log($(data).find('video').attr('src'));
- //   			console.log(data);
- //   		}
-	// });
+
 	var v = fbURL.indexOf("video");
 	var i=0;
 	for(i=v; i<fbURL.length; i++){
@@ -53,14 +45,29 @@ extractFbVideo = function(fbURL){
 		type: "GET",
 		success: function(data){
 			console.log(data.source);
-			confirmation();
+			confirmation(data.source, "");
 		}
 	})
 
 }
 
-confirmation = function(){
+confirmation = function(fbSource, youtubeID){
+	console.log("facebook=" + encodeURIComponent(fbSource) + "&youtube=" + youtubeID);
 	// Send to server
-
-	// Change to different messages for success and failure
+	$.ajax({
+		url: "http://fb-hacks.herokuapp.com/upload?facebook=" + encodeURIComponent(fbSource) + "&youtube=" + youtubeID,
+		type: "GET",
+		crossDomain: true,
+		success: function(data){
+				console.log(data);
+				var celebrate = data.facebook == "success" || data.youtube == "failure";
+				// Change to different messages for success and failure
+				if(celebrate){
+					$("#message").html("<h2>Congratulations, your video was successfully posted and is now safe from pirates.</h2>");
+				}
+				else {
+					$("#message").html("<h2>Sorry, it seems your video is a copy of an existing video. Please upload original content only.</h2>");
+				}
+		}
+	})
 }
