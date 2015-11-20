@@ -37,7 +37,7 @@ callServer = function(url, element) {
 				consumeServer(data, element);
 			}
 		}
-	})
+	});
 }
 
 consumeServer = function(result, element) {
