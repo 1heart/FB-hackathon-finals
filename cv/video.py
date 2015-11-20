@@ -16,8 +16,9 @@ ydl_opts = {
 
 ydl = youtube_dl.YoutubeDL(ydl_opts)
 
-def youtube_download(video_id):
+def youtube_download(video_id, filename=dldir + "%(id)s"):
 	if not get_youtube_video(video_id):
+		ydl = youtube_dl.YoutubeDL(ydl_opts)
 		ydl.download(['https://www.youtube.com/watch?v=' + video_id])
 
 '''
@@ -60,7 +61,7 @@ def correlate_hash_list(a,b):
 		for j in range(len(b)):
 			total += a[j+i] - b[j]
 		result.append(total/float(len(b)))
-	return min(result)
+	return min((val, idx) for (idx, val) in enumerate(total))
 
 # test_id = 'NEx-qyZAmqs'
 # same_id = 'NEx-qyZAmqs'
