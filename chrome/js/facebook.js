@@ -45,7 +45,7 @@ consumeServer = function(result, element) {
 	if (result != null) {
 		if (result['matched']=='true' && window.location.href.indexOf(result['original'])==-1) {
 			element.classList.add("Pirated");
-			element.parentNode.parentNode.parentNode.parentNode.innerHTML += "<div><a href='https://www.google.com'><div class='full-width'>This video is likely pirated or plagiarized. Click here to support the original artist.</div></a></div>";
+			element.parentNode.parentNode.parentNode.parentNode.innerHTML += "<div><a href='" + result.srcurl + "'><div class='full-width'>This video is likely pirated or plagiarized. Click here to support the original artist.</div></a></div>";
 			console.log("added class");
 		}
 
