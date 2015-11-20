@@ -61,7 +61,7 @@ def correlate_hash_list(a,b):
 		for j in range(len(b)):
 			total += a[j+i] - b[j]
 		result.append(total/float(len(b)))
-	return min((val, idx) for (idx, val) in enumerate(total))
+	return min((val, idx) for (idx, val) in enumerate(result))
 
 # test_id = 'NEx-qyZAmqs'
 # same_id = 'NEx-qyZAmqs'
