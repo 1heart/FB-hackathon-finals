@@ -15,13 +15,13 @@
     "persistent": false
   },
 
-  "content_scripts": [
-    {
-      "matches": ["https://www.facebook.com/*"],
-      // "css": [""],
-      "js": ["js/jquery.js", "js/content.js"]
-    }
-  ],
+  // "content_scripts": [
+  //   {
+  //     "matches": ["https://www.facebook.com/*"],
+  //     // "css": [""],
+  //     "js": ["js/jquery.js", "js/content.js"]
+  //   }
+  // ],
 
   "permissions": [
     "activeTab",
