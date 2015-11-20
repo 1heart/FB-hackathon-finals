@@ -66,3 +66,14 @@
 	height: 100px;
 	width: 100px;
 }
+
+.full-width {
+	width: 100%;
+	height: 30px;
+	background-color: #d8dfea;
+	text-align: center;
+	padding-top: 10px;
+	border-right-style: solid #3b5998;
+    border-bottom-style: solid #3b5998;
+    border-left-style: solid #3b5998;
+}
