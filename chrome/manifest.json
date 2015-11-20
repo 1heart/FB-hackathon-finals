@@ -1,0 +1,51 @@
+{
+  "manifest_version": 2,
+
+  "name": "FB Hack",
+  "description": "This extension detects if a video is not being played from the original source and lets users know so they can support the original content creators.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "images/angry_cat.png",
+    "default_title": "hack"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  // "content_scripts": [
+  //   {
+  //     "matches": ["https://www.facebook.com/*"],
+  //     // "css": [""],
+  //     "js": ["js/jquery.js", "js/content.js"]
+  //   }
+  // ],
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "declarativeContent",
+    "https://ajax.googleapis.com/",
+    "*://www.google.com/*",
+    "*://fb-hacks.herokuapp.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/*", "https://www.youtube.com/*"],
+      "css": ["css/style.css"],
+      "js": ["js/jquery.js", "js/script.js", "js/vex.js"]
+    },
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["css/style.css", "css/vex.css", "css/vex-theme-os.css"],
+      "js": ["js/vex.combined.min.js", "js/youtube.js"]
+    },
+    {
+      "matches": ["https://www.facebook.com/*"],
+      "css": ["css/style.css", "css/vex.css", "css/vex-theme-os.css"],
+      "js": ["js/withinviewport.js", "js/jquery.withinviewport.js", "js/jquery.js","js/vex.combined.min.js", "js/facebook.js"]
+    }
+  ]
+}
