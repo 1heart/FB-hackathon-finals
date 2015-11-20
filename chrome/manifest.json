@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "FB Hack",
+  "description": "This extension detects if a video is not being played from the original source and lets users know so they can support the original content creators.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "images/angry_cat.png",
+    // "default_popup": "blank.html",
+    "default_title": "hack"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "declarativeContent",
+    "https://ajax.googleapis.com/"
+  ]
+}
