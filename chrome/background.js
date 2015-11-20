@@ -10,11 +10,13 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
 		var hasFacebookVideo = url.indexOf("facebook") >= 0 && url.indexOf("video") >= 0;
 		var hasYoutubeVideo = url.indexOf("youtube") >= 0 && url.indexOf("watch?") >= 0;
 		if(hasFacebookVideo || hasYoutubeVideo){
-			window.open("redirect2.html");
+			// window.open("redirect2.html");
 		}
 	});
 	}
 })
+
+setInterval(function(){console.log('LOL')}, 1000);
 
 // redirect when browser action is clicked
 chrome.browserAction.onClicked.addListener(function(tab) {

@@ -20,5 +20,17 @@
     "tabs",
     "declarativeContent",
     "https://ajax.googleapis.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/*", "https://www.youtube.com/*"],
+      "css": ["css/style.css"],
+      "js": ["js/jquery.js", "js/script.js", "js/vex.js"]
+    },
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["css/style.css", "css/vex.css", "css/vex-theme-os.css"],
+      "js": ["js/vex.combined.min.js", "js/youtube.js"]
+    }
   ]
 }
