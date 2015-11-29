@@ -16,13 +16,28 @@ vid_id = function() {
 }
 
 callServer = function() {
-	var dummyServerResult = {
-		// 'pirated': 'false',
-		// 'original': 'https://www.youtube.com/watch?v=tIcOqOWHyHk'
-		'matched': 'true',
-		'original': 'https://www.youtube.com/watch?v=-CEuEyptKX0'
-	}
-	consumeServer(dummyServerResult);
+	// var dummyServerResult = {
+	// 	// 'pirated': 'false',
+	// 	// 'original': 'https://www.youtube.com/watch?v=tIcOqOWHyHk'
+	// 	'matched': 'true',
+	// 	'original': 'https://www.youtube.com/watch?v=-CEuEyptKX0'
+	// }
+	// consumeServer(dummyServerResult);
+	var url = vid_id();
+	$.ajax({
+		url: "http://localhost/upload?url=" + encodeURIComponent(url),
+		type: "GET",
+		crossDomain: true,
+		success: function(data){
+			console.log(data);
+			var celebrate = data.facebook == "success" || data.youtube == "success";
+			celebrate = false;
+			// Change to different messages for success and failure
+			if(celebrate){
+				consumeServer(data, element);
+			}
+		}
+	})
 }
 
 consumeServer = function(result) {

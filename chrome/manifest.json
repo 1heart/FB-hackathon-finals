@@ -11,7 +11,7 @@
   },
 
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["background.js", "js/youtube.js", "js/facebook.js"],
     "persistent": false
   },
 
@@ -29,7 +29,9 @@
     "declarativeContent",
     "https://ajax.googleapis.com/",
     "*://www.google.com/*",
-    "*://fb-hacks.herokuapp.com/*"
+    "*://fb-hacks.herokuapp.com/*",
+    "http://localhost:5000/*",
+    "https://localhost:5000/*"
   ],
   "content_scripts": [
     {

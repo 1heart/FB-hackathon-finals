@@ -55,7 +55,7 @@ confirmation = function(fbSource, youtubeID){
 	console.log("facebook=" + encodeURIComponent(fbSource) + "&youtube=" + youtubeID);
 	// Send to server
 	$.ajax({
-		url: "http://fb-hacks.herokuapp.com/upload?facebook=" + encodeURIComponent(fbSource) + "&youtube=" + youtubeID,
+		url: "http://localhost:5000/upload?facebook=" + encodeURIComponent(fbSource) + "&youtube=" + youtubeID,
 		type: "GET",
 		crossDomain: true,
 		success: function(data){
